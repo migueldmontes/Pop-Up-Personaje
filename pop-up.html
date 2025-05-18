@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop-up Personaje</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.7);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .popup {
+            background-color: #fff;
+            padding: 20px 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            width: 80%;
+            max-width: 500px;
+            position: relative;
+            text-align: center;
+        }
+        .popup h2 {
+            margin-top: 0;
+        }
+        .popup p {
+            margin-bottom: 20px;
+        }
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #888;
+        }
+        .open-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+        .open-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <button class="open-btn" onclick="showPopup()">Conocer a Nikola Tesla</button>
+
+    <div id="popup-overlay" class="popup-overlay">
+        <div class="popup">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h2>Nikola Tesla</h2>
+            <p>Inventor, ingeniero eléctrico, ingeniero mecánico y futurista. Conocido por sus contribuciones al diseño del moderno sistema de suministro eléctrico de corriente alterna (CA) y por sus innovadoras ideas sobre energía inalámbrica.</p>
+            <p>Sus inventos revolucionaron la tecnología moderna y su visión sigue inspirando a generaciones de innovadores.</p>
+        </div>
+    </div>
+
+    <script>
+        function showPopup() {
+            document.getElementById('popup-overlay').style.display = 'flex';
+        }
+        function closePopup() {
+            document.getElementById('popup-overlay').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
